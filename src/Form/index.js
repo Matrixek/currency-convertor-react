@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Form = () => {
+const Form = () => (
     <form>
     <fieldset className="form__fieldset">
         <legend className="form__legend">Kalkulator walut</legend>
@@ -41,6 +41,6 @@ const Form = () => {
         </p>
     </fieldset>
 </form>
-}
+)
 
 export default Form;
