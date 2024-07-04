@@ -1,5 +1,4 @@
 # Currency Convertor - React 
-##
  [http://localhost:3000](http://localhost:3000) 
  
 [![zrzut-ekranu-1.png](https://i.postimg.cc/prG7Wky3/zrzut-ekranu-1.png)](https://postimg.cc/vxnXXrrv)
@@ -11,7 +10,5 @@ Currency calculator allows converting amount in PLN to one of three currencies: 
 ## Techniques
 ---
 - CSS
-- Flex
-- CSS function min, max
-- ES6+ feature
-- BEM
+- HTML
+- React
