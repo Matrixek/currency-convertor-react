@@ -1,7 +1,7 @@
 # Currency Convertor - React 
  [http://localhost:3000](http://localhost:3000) 
 
-### `npm test`
+### 
 [![zrzut-ekranu-1.png](https://i.postimg.cc/prG7Wky3/zrzut-ekranu-1.png)](https://postimg.cc/vxnXXrrv)
 
 ### `npm run build`
