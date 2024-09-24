@@ -3,4 +3,4 @@ const Result = ({ targetAmonut, myResult, selectedCurrency }) => {
         `${targetAmonut} PLN = ${myResult.toFixed(2)} ${selectedCurrency}`
     );
 };
-export default Result;
+export default Result; 
