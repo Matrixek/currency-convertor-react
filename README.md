@@ -1,4 +1,4 @@
-## My second project currency calculator 
+## My project currency calculator w React
 ---
 
 Welcome to my currency calculator making during Frontend Developer course on YouCode
