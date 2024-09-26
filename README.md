@@ -20,3 +20,4 @@ Currency calculator allows converting amount in PLN to one of three currencies: 
 - CSS function min, max
 - ES6+ feature
 - BEM
+- React
