@@ -64,7 +64,14 @@ const Form = () => {
                 <p>
                     <label>
                         <span className="form__labelText">Wynik:</span>
-                        <input className="form__field" name={result} readonly />
+                        <input className="form__field" readonly 
+                           {result &&
+                                targetAmonut={result.targetAmount}
+                                myResult={result.myResult}
+                                selectedCurrency={result.selectedCurrency}
+                            />
+                
+                        
                     </label>
                 </p>
                 <p>
@@ -73,13 +80,7 @@ const Form = () => {
                 <p>
                     <button className="form__button">Przelicz</button>
                     <span className="form__button--result">
-                        {result && (
-                            <Result
-                                targetAmonut={result.targetAmount}
-                                myResult={result.myResult}
-                                selectedCurrency={result.selectedCurrency}
-                            />
-                        )}
+                       
                     </span>
                 </p>
                 <p>
