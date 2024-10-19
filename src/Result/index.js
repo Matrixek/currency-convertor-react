@@ -1,9 +1,6 @@
 const Result = ({ targetAmonut, myResult, selectedCurrency }) => {
-  
-    `$ targetAmonut = { targetAmonut }
-    $  myResult = { myResult }
-     $ selectedCurrency = { selectedCurrency }`
-
-        `$({Form.targetAmonut})PLN = $({Form.myResult.toFixed(2)}) $({Form.selectedCurrency})`
+    {result &&
+        `$({result.setTtargetAmonut})PLN = $({result.myResult.toFixed(2)}) $({result.selectedCurrency})`
+    }
 };
 export default Result; 
