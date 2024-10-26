@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
-import currencies from "../currencies.js"
-import Result from "../Result";
+import currencies from "../currencies.js";
+
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -76,9 +76,10 @@ const Form = () => {
                 <p>
                     <button className="form__button">Przelicz</button>
                     <span className="form__button--result">
-                        {result &&
-                            <Result />
-                        }
+                        {result && (
+                      `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
+                        ${result.selectedCurrency}`
+                         )}
                     </span>
                 </p>
                 <p>
