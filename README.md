@@ -6,7 +6,8 @@ Welcome to my currency calculator making during Frontend Developer course on You
 ## Demo
 ---
 
-https://matrixek.github.io/currency-convertor/
+https://matrixek.github.io/currency-convertor-react/
+
 ![zrzut-ekranu-1.png](https://i.postimg.cc/L6S0KHGM/Bez-tytu-u.png)
 
 ## About my page
