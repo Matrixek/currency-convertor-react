@@ -9,6 +9,7 @@ const Form = () => {
     const [CurrencyValue, setCurrencyValue] = useState({
         content: currencies[0].content,
         shrt: currencies[0].shrt,
+        worth: currencies[0].worth,
     });
 
     const onFormSubmit = (event) => {
@@ -54,6 +55,7 @@ const Form = () => {
                                 setCurrencyValue({
                                     worth: CurrencyValue.worth,
                                     shrt: CurrencyValue.shrt,
+
                                 });
                             }}
                         >
@@ -64,10 +66,12 @@ const Form = () => {
                 <p>
                     <label>
                         <span className="form__labelText">Wynik:</span>
-                        <input className="form__field" readonly
+                        <input className="form__field"
+                           {result &&(
+                            `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
+                          ${result.selectedCurrency}`
+                           )}
                         />
-
-
                     </label>
                 </p>
                 <p>
@@ -76,10 +80,10 @@ const Form = () => {
                 <p>
                     <button className="form__button">Przelicz</button>
                     <span className="form__button--result">
-                        {result && (
-                      `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
-                        ${result.selectedCurrency}`
-                         )}
+
+
+
+
                     </span>
                 </p>
                 <p>
