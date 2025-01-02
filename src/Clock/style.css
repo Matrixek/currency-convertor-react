@@ -1,0 +1,11 @@
+.form_date {
+    text-align: right;
+    margin: auto;
+    font-size: small;
+}
+@media (max-width:950px) {
+    .form__date {
+    margin-top: 0px;
+    text-align: center;
+    }
+  }
