@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./style.css";
 import currencies from "../currencies.js";
+import CurrentDate from "../Clock/index.js";
+
+
 
 
 const Form = () => {
@@ -23,6 +26,7 @@ const Form = () => {
             });
             setAmount("");
         }
+        
     };
     const selectOption = currencies.map((currency) => (
         <option key={currency.id} value={currency.worth}>
@@ -35,7 +39,10 @@ const Form = () => {
         <form onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
+                <CurrentDate/>
                 <p>
+
+                
                     <label>
                         <span className="form__labelText">Podaj kwotę:* (PLN)</span>
                         <input type="number" className="form__field" min="0" step="0.01" value={amount}
@@ -65,14 +72,23 @@ const Form = () => {
                 </p>
                 <p>
                     <label>
-                        <span className="form__labelText">Wynik:</span>
-                        <input className="form__field"
-                           {result &&(
-                            `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
-                          ${result.selectedCurrency}`
-                           )}
-                        />
+                        <span className="form__labelText">Wynik:
+                            <p>
+                                {result && (
+                                    `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
+                             ${result.selectedCurrency}`
+
+                                )}
+                            </p>
+                        </span>
+
+
+
+
                     </label>
+
+
+
                 </p>
                 <p>
                     * - pole wymagane
@@ -86,11 +102,9 @@ const Form = () => {
 
                     </span>
                 </p>
+                
                 <p>
-                    <button type="reset" className="form__button" name="value">Wyczyść</button>
-                </p>
-                <p>
-                    Kurs z dnia: 21.01.23
+                    Kurs pochodzi ze strony nbp.pl z Tabeli nr 115/A/NBP/2020 z dnia 2020-06-16
                 </p>
             </fieldset>
         </form >
