@@ -13,7 +13,7 @@ const CurrentDate = ({ date }) => {
         };
     }, []);
    
-date = (newDate.toLocaleString(
+ date = (newDate.toLocaleString(
         undefined,
         {
             month: "long",
