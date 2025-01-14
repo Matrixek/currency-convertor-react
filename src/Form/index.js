@@ -10,16 +10,25 @@ import ResetButton from "../ResetButton/index.js";
 const Form = () => {
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState(null);
-    const [currencyvalue, setCurrencyValue] = useState(currencies[0].worth);
+    const [currencyValue, setCurrencyValue] = useState({
+        content: currencies[0].content,
+        shrt: currencies[0].shrt,
+        worth: currencies[0].worth
+    })
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult(amount, currencyvalue);
+        const foundCurrency = currencies.find(it => it.worth === parseFloat(currencyValue.worth));
+        if (foundCurrency) {
+            setResult({
+                targetAmount: +amount,
+                myResult: amount / foundCurrency.worth,
+                selectedCurrency: foundCurrency.shrt,
+            });
+            setAmount("");
+        }
     };
-    const calculateResult = (amount, currencyvalue) => {
-        const calculationResult = (amount / currencyvalue);
-        setResult(`${calculationResult}`);
-    };
+
 
 
     const selectOption = currencies.map((currency) => (
@@ -48,12 +57,12 @@ const Form = () => {
                     <label>
                         <span className="form__labelText">Wybierz walutę:</span>
                         <select className=" form__field form__field--select"
-                            value={currencyvalue.worth}
+                            value={currencyValue.worth}
                             onChange={({ target }) => {
-                                const currencyvalue = currencies.find(currency => currency.worth === parseFloat(target.value));
+                                const currencyValue = currencies.find(currency => currency.worth === parseFloat(target.value));
                                 setCurrencyValue({
-                                    worth: currencyvalue.worth,
-                                    shrt: currencyvalue.shrt,
+                                    worth: currencyValue.worth,
+                                    shrt: currencyValue.shrt,
 
                                 });
                             }}
@@ -67,7 +76,7 @@ const Form = () => {
                         <span className="form__labelText">Wynik:</span>
                         <p className="form__labelText--result">
                             {result && (
-                            `${result.targetAmount} PLN = ${result.calculateResult.toFixed(2)}
+                                `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
                              ${result.selectedCurrency}`
 
                             )}
