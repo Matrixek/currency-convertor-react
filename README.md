@@ -12,7 +12,7 @@ https://matrixek.github.io/currency-convertor-react/
 
 ## About my page
 ---
-Currency calculator allows converting amount in PLN to one of three currencies: Euro,Dollar,Britse Pond. After convert calculator show result of converting.Calculator can clear the form.
+Currency calculator have actuall date and allows converting amount in PLN to one of three currencies: Euro,Dollar,Britse Pond. After convert calculator show result of converting.Calculator can clear the form.
 
 ## Techniques
 ---
