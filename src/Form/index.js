@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import currencies from "../currencies.js";
-import CurrentDate from "../Clock/index.js";
+import { Clock } from "../Clock/index.js";
 import ResetButton from "../ResetButton/index.js";
 
 
@@ -42,7 +42,7 @@ const Form = () => {
         <form onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kalkulator walut</legend>
-                <CurrentDate />
+                <Clock />
                 <p>
                     <label>
                         <span className="form__labelText">Podaj kwotę:* (PLN)</span>
