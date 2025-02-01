@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import "./style.css";
 import currencies from "../currencies.js";
 import { Clock } from "../Clock/index.js";
-import ResetButton from "../ResetButton/index.js";
-
-
-
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -30,14 +26,11 @@ const Form = () => {
     };
 
 
-
     const selectOption = currencies.map((currency) => (
         <option key={currency.id} value={currency.worth}>
             {currency.shrt}
         </option>
     ));
-
-
     return (
         <form onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
@@ -83,20 +76,16 @@ const Form = () => {
                         </p>
                     </label>
 
-
-
                 </p>
                 <p>
                     * - pole wymagane
                 </p>
                 <p>
                     <button className="form__button">Przelicz</button>
-
                 </p>
                 <p>
 
                 </p>
-                <ResetButton />
 
                 <p>
                     Kurs pochodzi ze strony nbp.pl z Tabeli nr 115/A/NBP/2020 z dnia 2020-06-16
