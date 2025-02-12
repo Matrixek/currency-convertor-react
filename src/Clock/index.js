@@ -1,13 +1,13 @@
 import { useCurrentDate } from "./useCurrentDate"
-import "./style.css";
+import { FormDate } from "./styled";
 
 
 export const Clock = () => {
     const date = useCurrentDate();
     
     return (
-        <p className="form_date">
+        <FormDate>
             {date}
-        </p>
+        </FormDate>
     );
 };
