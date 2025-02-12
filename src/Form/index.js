@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./style.css";
 import currencies from "../currencies.js";
 import { Clock } from "../Clock/index.js";
+import {StyledForm,Legend,LabelText,Input, Select,Button, ButtonResult} from "./styled.js"
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -33,13 +33,13 @@ const Form = () => {
     ));
     return (
         <form onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Kalkulator walut</legend>
+          <StyledForm>
+                <Legend>Kalkulator walut</Legend>
                 <Clock />
                 <p>
                     <label>
-                        <span className="form__labelText">Podaj kwotę:* (PLN)</span>
-                        <input type="number" className="form__field" min="0" step="0.01" value={amount}
+                        <LabelText>Podaj kwotę:* (PLN)</LabelText>
+                        <Input type="number"  min="0" step="0.01" value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             name="value"
                             placeholder="Wpisz kwotę w zł" required />
@@ -48,8 +48,8 @@ const Form = () => {
                 </p>
                 <p>
                     <label>
-                        <span className="form__labelText">Wybierz walutę:</span>
-                        <select className=" form__field form__field--select"
+                        <LabelText>Wybierz walutę:</LabelText>
+                        <Select
                             value={currencyValue.worth}
                             onChange={({ target }) => {
                                 const currencyValue = currencies.find(currency => currency.worth === parseFloat(target.value));
@@ -61,19 +61,21 @@ const Form = () => {
                             }}
                         >
                             {selectOption}
-                        </select>
+                        </Select>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <span className="form__labelText">Wynik:</span>
-                        <p className="form__labelText--result">
+                        <LabelText>Wynik:</LabelText>
+                        <ButtonResult>
+                            <p>
                             {result && (
                                 `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
                              ${result.selectedCurrency}`
 
                             )}
-                        </p>
+                            </p>
+                        </ButtonResult>
                     </label>
 
                 </p>
@@ -81,7 +83,7 @@ const Form = () => {
                     * - pole wymagane
                 </p>
                 <p>
-                    <button className="form__button">Przelicz</button>
+                    <Button>Przelicz</Button>
                 </p>
                 <p>
 
@@ -90,7 +92,7 @@ const Form = () => {
                 <p>
                     Kurs pochodzi ze strony nbp.pl z Tabeli nr 115/A/NBP/2020 z dnia 2020-06-16
                 </p>
-            </fieldset>
+            </StyledForm>
         </form >
     )
 };
