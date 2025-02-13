@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import currencies from "../currencies.js";
 import { Clock } from "../Clock/index.js";
-import {StyledForm,Legend,LabelText,Input, Select,Button, ButtonResult} from "./styled.js"
+import { StyledForm, Legend, LabelText, Input, Select, Button, ButtonResult } from "./styled.js"
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -33,13 +33,13 @@ const Form = () => {
     ));
     return (
         <form onSubmit={onFormSubmit}>
-          <StyledForm>
+            <StyledForm>
                 <Legend>Kalkulator walut</Legend>
                 <Clock />
                 <p>
                     <label>
                         <LabelText>Podaj kwotę:* (PLN)</LabelText>
-                        <Input type="number"  min="0" step="0.01" value={amount}
+                        <Input type="number" min="0" step="0.01" value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             name="value"
                             placeholder="Wpisz kwotę w zł" required />
@@ -69,11 +69,11 @@ const Form = () => {
                         <LabelText>Wynik:</LabelText>
                         <ButtonResult>
                             <p>
-                            {result && (
-                                `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
+                                {result && (
+                                    `${result.targetAmount} PLN = ${result.myResult.toFixed(2)}
                              ${result.selectedCurrency}`
 
-                            )}
+                                )}
                             </p>
                         </ButtonResult>
                     </label>
