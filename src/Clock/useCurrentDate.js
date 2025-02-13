@@ -1,29 +1,16 @@
 import { useEffect, useState } from "react";
 
-export const useCurrentDate = (date) => {
-    const [newDate, setNewDate] = useState(new Date());
+export const useCurrentDate = () => {
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
         const IntervalId = setInterval(() => {
-            setNewDate(new Date());
+            setDate(new Date());
         }, 1000);
         return () => {
             clearInterval(IntervalId);
         };
     }, []);
-    date = (newDate.toLocaleString(
-        undefined,
-        {
-            month: "long",
-            weekday: "long",
-            day: "numeric",
-            year: "numeric",
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric"
-
-        },
-    ));
-
+    
     return date;
 };
