@@ -5,7 +5,7 @@ export const FormDate = styled.p`
     margin: auto;
     font-size: medium;
 
-  @media (max-width:950px) {
+  @media (max-width:${({ theme }) => theme.breakpoint.mobile}px) {
     margin-top: 0px;
     text-align: center;
 }

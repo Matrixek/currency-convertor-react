@@ -10,11 +10,11 @@ export const StyledForm = styled.fieldset`
 `;
 
 export const Legend = styled.legend`
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     border-radius: 5px;
     padding: 10px;
     font-size: 20px;
-    background-color: rgb(110, 110, 255);
+    background-color:${({ theme }) => theme.colors.ButtonColor};
 `;
 export const LabelText = styled.span`
     width: 150px;
@@ -44,16 +44,18 @@ export const Select = styled.select`
 export const Button = styled.button`
     width: 100%;
     border: none;
-    background-color: rgb(110, 110, 255);
-    color: white;
+    background-color: ${({ theme }) => theme.colors.ButtonColor};
+    color: ${({ theme }) => theme.colors.white};
     padding: 10px;
     border-radius: 5px;
 
     &:hover {
-    background-color: rgb(92, 92, 233); 
+    background-color:  ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.white};
     }
     &:active{
-    background-color: rgb(92, 92, 180);
+    background-color: ${({ theme }) => theme.colors.ButtonColor};
+    color: ${({ theme }) => theme.colors.white};
     }
 `;
 export const ButtonResult = styled.span`
