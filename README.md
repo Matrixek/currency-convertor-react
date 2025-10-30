@@ -8,7 +8,7 @@ Welcome to my currency calculator making during Frontend Developer course on You
 
 https://matrixek.github.io/currency-convertor-react/
 
-![zrzut-ekranu-1.png](https://i.postimg.cc/L6S0KHGM/Bez-tytu-u.png)
+![zrzut-ekranu-1.png](https://postimg.cc/DS1Z5zMb)
 
 ## About my page
 ---
@@ -22,6 +22,7 @@ Currency calculator have actuall date and allows converting amount in PLN to cur
 - Kod źródłowy oparty na strukturze funkcji
 - Interakcja interfejsu API REST firmy Axios z danymi w pamięci podręcznej
 - asynchroniczny async/await JS
+
 
 
 
