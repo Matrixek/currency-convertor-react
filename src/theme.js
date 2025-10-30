@@ -1,10 +1,13 @@
 export const theme = {
-    colors: {
-     ButtonColor: "#009EC4",
-     hover: "#0078C4",
-      white:"#FFFFFF"
-    },
-    breakpoint: {
-      mobile: 767,
-    },
-  };
+  colors: {
+    ButtonColor: "#009EC4",
+    hover: "#0078C4",
+    white: "#FFFFFF",
+    teal: "#008080",
+    crimson: "#db143c",
+
+  },
+  breakpoint: {
+    mobile: 767,
+  },
+};

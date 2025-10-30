@@ -61,3 +61,9 @@ export const Button = styled.button`
 export const ButtonResult = styled.span`
     font-weight:bold;
 `;
+export const Loading = styled.p`
+color: ${({ theme }) => theme.colors.teal};
+`;
+export const Failure = styled.p`
+color : ${({ theme }) => theme.colors.crimson};
+`;
