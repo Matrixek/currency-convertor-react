@@ -12,13 +12,13 @@ https://matrixek.github.io/currency-convertor-react/
 
 ## About my page
 ---
-Currency calculator have actuall date and allows converting amount in PLN to one of three currencies: Euro,Dollar,Britse Pond. After convert calculator show result of converting.Calculator can clear the form.
+Currency calculator have actuall date and allows converting amount in PLN to currencie. After convert calculator show result of converting.
 
 ## Techniques
 ---
-- CSS
-- Flex
-- CSS function min, max
-- ES6+ feature
-- BEM
-- React
+-Funkcje ECMAScript +06
+-Biblioteka React 18
+-Styled-Components
+-Kod źródłowy oparty na strukturze funkcji
+-Interakcja interfejsu API REST firmy Axios z danymi w pamięci podręcznej
+-asynchroniczny async/await JS
