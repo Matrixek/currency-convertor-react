@@ -16,11 +16,12 @@ Currency calculator have actuall date and allows converting amount in PLN to cur
 
 ## Techniques
 ---
---Funkcje ECMAScript +06
---Biblioteka React 
---Styled-Components
---Kod źródłowy oparty na strukturze funkcji
---Interakcja interfejsu API REST firmy Axios z danymi w pamięci podręcznej
---asynchroniczny async/await JS
+- -Funkcje ECMAScript +06
+- -Biblioteka React 
+- -Styled-Components
+- -Kod źródłowy oparty na strukturze funkcji
+- -Interakcja interfejsu API REST firmy Axios z danymi w pamięci podręcznej
+- -asynchroniczny async/await JS
+
 
 
