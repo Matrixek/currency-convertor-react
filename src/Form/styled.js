@@ -31,13 +31,16 @@ export const LabelTextResult = styled.p`
 
 export const Input = styled.input`
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    width:200px;
     padding: 3px;
     border-color: #777;
     background-color: rgb(255, 213, 213);
 
 `;
 export const Select = styled.select`
+    padding: 2px;
+    width: 200px;
      background-color:bisque;
      border-radius: 5px;
 `;
@@ -60,10 +63,13 @@ export const Button = styled.button`
 `;
 export const ButtonResult = styled.span`
     font-weight:bold;
+    text-align: center;
+  font-size: 1.2rem;
+  margin: 10px 0;
 `;
 export const Loading = styled.p`
-color: ${({ theme }) => theme.colors.teal};
+color: ${({ theme }) => theme.colors.black};
 `;
 export const Failure = styled.p`
-color : ${({ theme }) => theme.colors.crimson};
+color : ${({ theme }) => theme.colors.black};
 `;
