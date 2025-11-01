@@ -8,17 +8,23 @@ Welcome to my currency calculator making during Frontend Developer course on You
 
 https://matrixek.github.io/currency-convertor-react/
 
-![zrzut-ekranu-1.png](https://i.postimg.cc/L6S0KHGM/Bez-tytu-u.png)
+![zrzut-ekranu-1.png](https://i.postimg.cc/P5RwXpbK/1.png)
 
 ## About my page
 ---
-Currency calculator have actuall date and allows converting amount in PLN to one of three currencies: Euro,Dollar,Britse Pond. After convert calculator show result of converting.Calculator can clear the form.
+Currency calculator have actuall date and allows converting amount in PLN to currencie. After convert calculator show result of converting.
 
 ## Techniques
 ---
-- CSS
-- Flex
-- CSS function min, max
-- ES6+ feature
-- BEM
-- React
+- Funkcje ECMAScript +06
+- Biblioteka React 
+- Styled-Components
+- Interakcja interfejsu API REST
+
+
+
+
+
+
+
+
