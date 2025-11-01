@@ -11,12 +11,14 @@ html {
 
 body {
   background-image: url("https://i.postimg.cc/FHbMcFLr/background.jpg");
-  resize: both;
-  overflow: auto;
   font-family: 'Lato', sans-serif;
-  background-size: cover;
-  margin: 20px;
-  padding: 40px;
+   margin: 0;
+  padding: 0;
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
 }
 
 `;
