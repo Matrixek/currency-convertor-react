@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcurrency_convertor_react=self.webpackChunkcurrency_convertor_react||[]).push([[227],{227:function(e){e.exports=JSON.parse('{"data":{"EUR":{"code":"EUR","value":0.23,"last_updated":"2025-11-01"},"USD":{"code":"USD","value":0.26,"last_updated":"2025-11-01"},"GBP":{"code":"GBP","value":0.2,"last_updated":"2025-11-01"}}}')}}]);
