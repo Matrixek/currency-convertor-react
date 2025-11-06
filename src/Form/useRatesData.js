@@ -4,6 +4,8 @@ import axios from "axios";
 const API_KEY = "cur_live_DTIi1G5h0Kthi1a1Y2HRwJe0dSCFXO2YSGfya7wv";
 const API_URL = `https://api.currencyapi.com/v3/latest?apikey=${API_KEY}`;
 
+const USE_LOCAL_DATA = true;
+
 export const useCurrencyConverter = () => {
   const [rates, setRates] = useState({});
   const [result, setResult] = useState(null);
@@ -14,18 +16,28 @@ export const useCurrencyConverter = () => {
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const response = await axios.get(API_URL);
-        setRates(response.data.data);
-        const anyCurrency = Object.keys(response.data.data)[0];
+        let data;
+
+        if (USE_LOCAL_DATA) {
+          const localData = await import("../Form/data/rates.json");
+          data = localData.default;;
+        } else {
+          const response = await axios.get(API_URL);
+          data = response.data;;
+        }
+
+        setRates(data.data);
+
+        const anyCurrency = Object.keys(data.data)[0];
         setDate(
-          response.data.data[anyCurrency].last_updated ||
+          data.data[anyCurrency].last_updated ||
             new Date().toISOString().split("T")[0]
         );
       } catch (error) {
         console.error("Błąd pobierania danych", error);
         setError("Nie udało się pobrać kursów walut.");
       } finally {
-        setLoading(false);
+        setTimeout(() => setLoading(false), 1000);
       }
     };
 

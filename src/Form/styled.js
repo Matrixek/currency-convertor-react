@@ -69,6 +69,14 @@ export const ButtonResult = styled.span`
 `;
 export const Loading = styled.p`
 color: ${({ theme }) => theme.colors.black};
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
 `;
 export const Failure = styled.p`
 color : ${({ theme }) => theme.colors.black};

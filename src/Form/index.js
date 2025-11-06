@@ -16,24 +16,15 @@ import { useCurrencyConverter } from "./useRatesData";
 export const Form = () => {
   const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState("EUR");
-  const [result, setResult] = useState(null);
-  const ratesData = useCurrencyConverter();
-
-  const calculateResult = (currency, amount) => {
-  const rate = ratesData.rates[currency]?.value;
-
-  if (!rate) {
-    console.error("Brak kursu dla:", currency);
-    return;
-  }
-
-  setResult({
-    sourceAmount: +amount,
-    targetAmount: +amount * rate,
-    currency,
-  });
-};
-
+  const {
+    result,
+    calculateResult,
+    rates,
+    loading,
+    error,
+    date,
+    reloadRates,
+  } = useCurrencyConverter();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -46,14 +37,20 @@ export const Form = () => {
       <StyledForm>
         <Legend>Kalkulator walut</Legend>
         <Clock />
-        {ratesData.state === "loading" ? (
+
+        {loading ? (
           <Loading>
-            Sekundka... <br />
-            Ładuję kursy walut z Europejskiego Banku Centralnego
+            <div className="loader"></div>
+            <p>
+              Sekundka... <br />
+              Ładuję kursy walut.
+            </p>
           </Loading>
-        ) : ratesData.state === "error" ? (
+        ) : error ? (
           <Failure>
-            Coś poszło nie tak 💥 Sprawdź, czy masz internet
+            {error}
+            <br />
+            <Button onClick={reloadRates}>Spróbuj ponownie</Button>
           </Failure>
         ) : (
           <>
@@ -65,9 +62,11 @@ export const Form = () => {
                   min="0"
                   step="0.01"
                   value={amount}
-                  onChange={({ target }) => setAmount(target.value)}
+                  onChange={({ target }) =>
+                    setAmount(target.value.replace(",", "."))
+                  }
                   name="value"
-                  placeholder="Wpisz kwotę w zł"
+                  placeholder="0,00"
                   required
                 />
               </label>
@@ -80,7 +79,7 @@ export const Form = () => {
                   value={currency}
                   onChange={({ target }) => setCurrency(target.value)}
                 >
-                  {Object.keys(ratesData.rates ?? {}).map((code) => (
+                  {Object.keys(rates ?? {}).map((code) => (
                     <option key={code} value={code}>
                       {code}
                     </option>
@@ -94,8 +93,8 @@ export const Form = () => {
               <ButtonResult>
                 {result && (
                   <p>
-                    {result.sourceAmount} PLN ={" "}
-                    {result.targetAmount.toFixed(2)} {result.currency}
+                    {parseFloat(amount).toFixed(2)} PLN ={" "}
+                    {result.resultElement.toFixed(2)} {result.from}
                   </p>
                 )}
               </ButtonResult>
@@ -104,12 +103,19 @@ export const Form = () => {
             <p>* - pole wymagane</p>
 
             <p>
-              <Button type="submit">Przelicz</Button>
+              <Button
+                type="submit"
+                disabled={!amount || amount <= 0 || loading}
+              >
+                Przelicz
+              </Button>
             </p>
 
             <p>
-              Kursy walut pobierane są z Europejskiego Banku Centralnego.
+              Kursy walut pobrane w dniu:{" "}
+              <strong>{new Date().toLocaleDateString("pl-PL")}</strong>
             </p>
+
           </>
         )}
       </StyledForm>
@@ -118,7 +124,3 @@ export const Form = () => {
 };
 
 export default Form;
-
-
-
-

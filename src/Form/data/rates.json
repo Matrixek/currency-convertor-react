@@ -1,0 +1,8 @@
+{
+  "data": {
+    "EUR": { "code": "EUR", "value": 0.23, "last_updated": "2025-11-01" },
+    "USD": { "code": "USD", "value": 0.26, "last_updated": "2025-11-01" },
+    "GBP": { "code": "GBP", "value": 0.20, "last_updated": "2025-11-01" }
+  }
+}
+
